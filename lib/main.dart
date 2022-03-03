@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/auth.dart';
 import 'screens/home.dart';
 import 'settings.dart';
@@ -47,7 +47,6 @@ class _StartScreenState extends State<StartScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _loadUserDataWithPathProvider();
   }
@@ -82,7 +81,7 @@ class _StartScreenState extends State<StartScreen> {
     if (_canAuth == true) {
       Navigator.of(context).pushNamedAndRemoveUntil(Settings().routeAuthScreen, (route) => false);
     } else {
-      Navigator.of(context).pushNamedAndRemoveUntil(Settings().routeRegisterScreen, (route) => false);
+      Navigator.of(context).pushNamed(Settings().routeRegisterScreen);
     }
   }
 
